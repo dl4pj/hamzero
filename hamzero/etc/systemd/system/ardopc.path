@@ -1,0 +1,5 @@
+[Path]
+PathExistsGlob=/dev/snd/by-id/usb-QRP_Labs_QMX_Transceiver-*
+
+[Install]
+WantedBy=multi-user.target

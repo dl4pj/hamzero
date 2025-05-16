@@ -1,0 +1,13 @@
+#!/bin/bash
+
+while true
+do
+
+if [[ `nmcli d status | grep 28:59:23:B8:60:D3` = *disconnected* ]]
+then
+  nmcli d connect 28:59:23:B8:60:D3
+fi
+
+sleep 5
+
+done

@@ -1,0 +1,15 @@
+[Unit]
+Description=pat
+Documentation=man:pat(1)
+After=network.target
+Wants=rigctld.service
+
+[Service]
+User=peter
+ExecStart=/usr/bin/pat http
+Type=simple
+PIDFile=/run/pat.pid
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

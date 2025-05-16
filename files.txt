@@ -1,0 +1,6 @@
+/etc/systemd/system/ardopc.path
+/etc/systemd/system/ardopc.service
+/etc/systemd/system/conbt.service
+/etc/systemd/system/pat.service
+/etc/systemd/system/rigctld.service
+/usr/bin/conbt

@@ -1,0 +1,9 @@
+[Unit]
+Description="Connect To BT Tether"
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/conbt
+
+[Install]
+WantedBy=multi-user.target

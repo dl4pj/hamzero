@@ -1,0 +1,13 @@
+[Unit]
+Description=hamlib rigctld
+Documentation=man:rigctld(1)
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/rigctld -m 2028 -r /dev/serial/by-id/usb-QRP_Labs_QMX_Transceiver-if00
+Type=simple
+PIDFile=/run/rigctld.pid
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

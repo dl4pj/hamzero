@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+systemctl enable pat
+systemctl start pat
+systemctl enable rigctld
+systemctl start rigctld
+systemctl enable ardopc.path
+systemctl start ardopc.path

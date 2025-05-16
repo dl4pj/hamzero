@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+systemctl stop pat
+systemctl disable pat
+systemctl stop rigctld
+systemctl disable rigctld
+systemctl stop ardopc.path
+systemctl disable ardopc.path

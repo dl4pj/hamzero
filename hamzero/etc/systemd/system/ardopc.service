@@ -1,0 +1,13 @@
+[Unit]
+Description=ardop
+After=network.target sound.target
+
+[Service]
+User=peter
+ExecStart=/usr/bin/ardopcf 8515 plughw:Transceiver,0 plughw:Transceiver,0 -G8081
+Type=simple
+PIDFile=/run/ardopc.pid
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

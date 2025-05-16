@@ -1,0 +1,5 @@
+Package: hamzero
+Version: 0.1
+Maintainer: Peter Jacobi
+Architecture: all
+Description: autostarting pat services
