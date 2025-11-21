@@ -7,7 +7,7 @@ Wants=rigctld.service
 [Service]
 User=peter
 ExecStart=/usr/bin/pat http
-Type=simple
+Type=exec
 PIDFile=/run/pat.pid
 ExecReload=/bin/kill -HUP $MAINPID
 

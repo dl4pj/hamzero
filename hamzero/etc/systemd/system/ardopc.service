@@ -1,13 +1,16 @@
 [Unit]
 Description=ardop
-After=network.target sound.target
+BindsTo=dev-snd-by\x2did-usb\x2dQRP_Labs_QMX_Transceiver\x2d02.device
+After=dev-snd-by\x2did-usb\x2dQRP_Labs_QMX_Transceiver\x2d02.device
 
 [Service]
 User=peter
 ExecStart=/usr/bin/ardopcf 8515 plughw:Transceiver,0 plughw:Transceiver,0 -G8081
-Type=simple
+Type=exec
 PIDFile=/run/ardopc.pid
 ExecReload=/bin/kill -HUP $MAINPID
+ExecStartPre=/bin/sleep 1
+ExecStopPost=/bin/sleep 1
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=dev-snd-by\x2did-usb\x2dQRP_Labs_QMX_Transceiver\x2d02.device

@@ -1,13 +1,14 @@
 [Unit]
 Description=hamlib rigctld
 Documentation=man:rigctld(1)
-After=network.target
+BindTo=dev-serial-by\x2did-usb\x2dQRP_Labs_QMX_Transceiver\x2dif00.device
+After=dev-serial-by\x2did-usb\x2dQRP_Labs_QMX_Transceiver\x2dif00.device
 
 [Service]
-ExecStart=/usr/bin/rigctld -m 2028 -r /dev/serial/by-id/usb-QRP_Labs_QMX_Transceiver-if00
-Type=simple
+ExecStart=/usr/bin/rigctld -v -m 2057 -r /dev/serial/by-id/usb-QRP_Labs_QMX_Transceiver-if00 -s115200
+Type=exec
 PIDFile=/run/rigctld.pid
 ExecReload=/bin/kill -HUP $MAINPID
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=dev-serial-by\x2did-usb\x2dQRP_Labs_QMX_Transceiver\x2dif00.device

@@ -1,4 +1,3 @@
-/etc/systemd/system/ardopc.path
 /etc/systemd/system/ardopc.service
 /etc/systemd/system/conbt.service
 /etc/systemd/system/pat.service
